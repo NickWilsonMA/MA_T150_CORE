@@ -29,4 +29,6 @@ public:
     AP_Int8  orientation;
     // LRD1 frequency mode (24GHz of Integrated)
     AP_Int8  lrd1_freq_mode;
+    // LRD1 Debug Log
+    AP_Int8  lrd1_logs;
 };

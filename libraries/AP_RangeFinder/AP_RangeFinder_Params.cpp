@@ -145,6 +145,13 @@ const AP_Param::GroupInfo AP_RangeFinder_Params::var_info[] = {
     // @User: Standard
     AP_GROUPINFO("LRD1MODE", 54, AP_RangeFinder_Params, lrd1_freq_mode, 0),
 
+    // @Param: LRD1LOG
+    // @DisplayName: LRD1 Logs Enabled
+    // @Description: Enable debug logs for LRD1
+    // @Values: 0:Disabled,1:Enabled
+    // @User: Standard
+    AP_GROUPINFO("LRD1LOG", 55, AP_RangeFinder_Params, lrd1_logs, 0),
+
     AP_GROUPEND
 };
 
