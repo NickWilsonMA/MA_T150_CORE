@@ -51,6 +51,9 @@ bool AP_RangeFinder_Ainstein_LRD1_Pro::get_reading(float &reading_m)
         return false;
     }
 
+    // Noting the current sensor value
+    float current_dist_reading_m = reading_m;
+
     bool has_data = false;
     int16_t nbytes = uart->available();
 
@@ -193,6 +196,13 @@ bool AP_RangeFinder_Ainstein_LRD1_Pro::get_reading(float &reading_m)
             {
                 state.status = RangeFinder::Status::NoData;
             }
+        }
+        /* Adding a check to ignore sudden jumps in height from Radar*/
+        else if(state.status == RangeFinder::Status::Good && 
+                (reading_m - current_dist_reading_m > CHANGE_HEIGHT_THRESHOLD ||
+                reading_m - current_dist_reading_m < -CHANGE_HEIGHT_THRESHOLD)){
+            state.status = RangeFinder::Status::NoData;
+            has_data = false;
         }
         else
         {
