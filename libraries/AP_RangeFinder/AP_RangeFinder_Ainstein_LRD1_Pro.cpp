@@ -170,7 +170,9 @@ bool AP_RangeFinder_Ainstein_LRD1_Pro::get_reading(float &reading_m)
         {
             malfunction_alert_prev = malfunction_alert;
             // The report malfunction is for debug use only
-            // report_malfunction(malfunction_alert);
+            if(lrd1_logs() == 1){
+                report_malfunction(malfunction_alert);
+            }
         }
 
         /* From datasheet:

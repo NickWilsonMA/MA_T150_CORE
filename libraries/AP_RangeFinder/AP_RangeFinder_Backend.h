@@ -46,6 +46,7 @@ public:
     virtual int16_t min_distance_cm() const { return params.min_distance_cm; }
     int16_t ground_clearance_cm() const { return params.ground_clearance_cm; }
     int8_t lrd1_freq_mode() const { return params.lrd1_freq_mode; }
+    int8_t lrd1_logs() const { return params.lrd1_logs; }
     MAV_DISTANCE_SENSOR get_mav_distance_sensor_type() const;
     RangeFinder::Status status() const;
     RangeFinder::Type type() const { return (RangeFinder::Type)params.type.get(); }
