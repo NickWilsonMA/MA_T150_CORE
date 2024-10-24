@@ -143,7 +143,7 @@ const AP_Param::GroupInfo AP_RangeFinder_Params::var_info[] = {
     // @Description: LRD1 Frequency Mode: 24GHz or Integrated
     // @Values: 0:24GHz,1:Int-Signal
     // @User: Standard
-    AP_GROUPINFO("LRD1MODE", 54, AP_RangeFinder_Params, lrd1_freq_mode, 0),
+    AP_GROUPINFO("LRD1MODE", 54, AP_RangeFinder_Params, lrd1_freq_mode, 1),
 
     // @Param: LRD1LOG
     // @DisplayName: LRD1 Logs Enabled
